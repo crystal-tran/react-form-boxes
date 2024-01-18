@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import BoxList from './BoxList';
 
 
 /** App component renders the BoxList component.

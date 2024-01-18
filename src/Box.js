@@ -10,20 +10,24 @@ import React from 'react';
  * BoxList -> Box
  */
 
-function Box({ box, removeBox }) {
-  const { width, height, backgroundColor } = box;
-
+function Box({ id, height, width, backgroundColor, removeBox }) {
   const boxStyles = {
     height,
     width,
     backgroundColor
+ }
+
+
+  function remove(){
+    console.log("remove, id:", id);
+    removeBox(id);
   }
-  //TODO:, how to send target to remove box
+
   return (
     <div>
-      <div className="Box" style={ boxStyles } >
+      <div className="Box" id={id} style={ boxStyles } >
       </div>
-      <button onClick={ removeBox }>Remove the box!</button>
+      <button onClick={remove}>Remove the box!</button>
     </div>
 
   );
