@@ -2,8 +2,11 @@ import React from 'react';
 /** Renders a box and a remove button for that box
  *
  * Props:
- * - box: object {id, width, height, color}
- * - removeBox (a function on the parent BoxList) on click
+ * - id: unique box id
+ * -height: box height
+ * -width: box width
+ * -backgroundColor: box background color
+ * - removeBox: (a function on the parent BoxList) to remove box on click
  *
  * State: None
  *
@@ -15,19 +18,18 @@ function Box({ id, height, width, backgroundColor, removeBox }) {
     height,
     width,
     backgroundColor
- }
+ };
 
-
-  function remove(){
-    console.log("remove, id:", id);
+/** Send id to parent to remove box */
+  function handleRemove(){
     removeBox(id);
   }
-
+  //don't need id-not required by app
   return (
     <div>
       <div className="Box" id={id} style={ boxStyles } >
       </div>
-      <button onClick={remove}>Remove the box!</button>
+      <button onClick={handleRemove}>Remove the box!</button>
     </div>
 
   );

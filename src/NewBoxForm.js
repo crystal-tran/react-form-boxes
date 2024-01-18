@@ -14,13 +14,14 @@ function NewBoxForm({ addBox }) {
   const initialState = { height: "", width: "", backgroundColor: "" };
   const [formData, setFormData] = useState(initialState);
 
-
+  /** Send {height, width, backgroundColor} to parent & clear form*/
   function handleSubmit(evt){
     evt.preventDefault();
     addBox(formData);
     setFormData(initialState);
   }
 
+  /**Update formData state w/ curr state of input element */
   function handleChange(evt){
     const { name, value } = evt.target;
     setFormData(curr => ({
