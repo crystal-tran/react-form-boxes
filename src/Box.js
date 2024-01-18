@@ -1,3 +1,4 @@
+import React from 'react';
 /** Renders a box and a remove button for that box
  *
  * Props:
@@ -12,9 +13,20 @@
 function Box({ box, removeBox }) {
   const { width, height, backgroundColor } = box;
 
-  //TODO:, pass box properties to style attribute
+  const boxStyles = {
+    height,
+    width,
+    backgroundColor
+  }
+  //TODO:, how to send target to remove box
   return (
-    <div className="Box">
+    <div>
+      <div className="Box" style={ boxStyles } >
+      </div>
+      <button onClick={ removeBox }>Remove the box!</button>
     </div>
+
   );
 }
+
+export default Box;

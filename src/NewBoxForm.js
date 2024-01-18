@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 /** Renders a form when submited and creates a new box
  *
  * Props:
@@ -54,6 +55,9 @@ function NewBoxForm({ addBox }) {
         value={formData.backgroundColor}
         onChange={handleChange}
       />
+      <button>Add a new box!</button>
     </form>
   );
 }
+
+export default NewBoxForm;
